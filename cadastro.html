@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cadastro — Matrícula Educação Infantil</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="has-login">
+
+<header class="site-header">
+  <div class="brand">
+    <div class="brand-mark">PJ</div>
+    <div class="brand-text">
+      <span class="city">Prefeitura de</span>
+      <span class="city">Joinville</span>
+    </div>
+  </div>
+  <div class="header-actions">
+    <div class="text-resize">
+      <button type="button" aria-label="Diminuir tamanho do texto">-A</button>
+      <button type="button" aria-label="Aumentar tamanho do texto">+A</button>
+    </div>
+    <button class="gov-login" type="button">
+      <span class="avatar"></span> LOGIN GOV.BR
+    </button>
+    <button class="menu-btn" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="floating-icons">
+  <button type="button" aria-label="Tradução em Libras">🤟</button>
+  <button type="button" aria-label="Recursos de acessibilidade">♿</button>
+</div>
+
+<button class="whatsapp-fab" aria-label="Fale conosco no WhatsApp">💬</button>
+
+<div class="cadastro-layout">
+  <aside class="stepper-sidebar">
+    <h2>ACOMPANHE O SEU PROCESSO</h2>
+
+    <div class="stage-block">
+      <div class="stage-number">1</div>
+      <div class="stage-info">
+        <h3>CADASTRO</h3>
+        <p>Preencha o formulário com as informações solicitadas.</p>
+      </div>
+    </div>
+    <ul class="sub-steps" id="sub-steps">
+      <li class="active" data-panel="responsavel">DADOS PESSOAIS – RESPONSÁVEL</li>
+      <li data-panel="candidato">DADOS PESSOAIS – CANDIDATO</li>
+      <li data-panel="endereco">ENDEREÇO</li>
+      <li data-panel="unidades">SELEÇÃO UNIDADES</li>
+      <li data-panel="residencia">PESSOAS QUE MORAM NA MESMA RESIDÊNCIA</li>
+      <li data-panel="financeira">SITUAÇÃO FINANCEIRA</li>
+      <li data-panel="resumo">PAINEL DE INFORMAÇÕES FINAIS</li>
+    </ul>
+  </aside>
+
+  <main class="form-panel">
+
+    <!-- Painel: Dados pessoais responsável -->
+    <section class="form-step" id="panel-responsavel">
+      <div class="panel-heading">👤 DADOS PESSOAIS – RESPONSÁVEL</div>
+      <form>
+        <div class="field-group">
+          <label for="cpf">CPF*</label>
+          <input type="text" id="cpf" required />
+        </div>
+        <div class="field-group">
+          <label for="nome">NOME*</label>
+          <input type="text" id="nome" required />
+        </div>
+        <div class="field-group">
+          <label for="nascimento">DATA DE NASCIMENTO*</label>
+          <input type="date" id="nascimento" required />
+        </div>
+        <div class="field-group">
+          <label for="estado-civil">ESTADO CIVIL*</label>
+          <input type="text" id="estado-civil" required />
+        </div>
+        <div class="field-group">
+          <label for="vinculo">TIPO DE VÍNCULO*</label>
+          <input type="text" id="vinculo" required />
+        </div>
+        <div class="field-group">
+          <label>SEXO*</label>
+          <div class="checkbox-row">
+            <label><input type="radio" name="sexo" /> FEMININO</label>
+            <label><input type="radio" name="sexo" /> MASCULINO</label>
+            <label><input type="radio" name="sexo" /> OUTRO</label>
+          </div>
+        </div>
+        <div class="field-group">
+          <label>COR/RAÇA*</label>
+          <div class="checkbox-row">
+            <label><input type="radio" name="cor" /> BRANCA</label>
+            <label><input type="radio" name="cor" /> PRETA</label>
+            <label><input type="radio" name="cor" /> AMARELA</label>
+            <label><input type="radio" name="cor" /> INDÍGENA</label>
+            <label><input type="radio" name="cor" /> NÃO DECLARADA</label>
+          </div>
+        </div>
+        <div class="field-group">
+          <label for="escolaridade">GRAU DE ESCOLARIDADE*</label>
+          <input type="text" id="escolaridade" required />
+        </div>
+        <div class="field-group">
+          <label for="celular">CELULAR*</label>
+          <input type="tel" id="celular" required />
+        </div>
+        <div class="form-nav">
+          <span></span>
+          <button type="button" class="btn-primary next-step">Avançar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Painel: Dados pessoais candidato -->
+    <section class="form-step" id="panel-candidato" hidden>
+      <div class="panel-heading">👤 DADOS PESSOAIS – CANDIDATO</div>
+      <form>
+        <div class="field-group">
+          <label for="nome-crianca">NOME DA CRIANÇA*</label>
+          <input type="text" id="nome-crianca" required />
+        </div>
+        <div class="field-group">
+          <label for="nascimento-crianca">DATA DE NASCIMENTO*</label>
+          <input type="date" id="nascimento-crianca" required />
+        </div>
+        <div class="field-group">
+          <label for="certidao">CERTIDÃO DE NASCIMENTO*</label>
+          <input type="text" id="certidao" required />
+        </div>
+        <div class="field-group">
+          <label>SEXO*</label>
+          <div class="checkbox-row">
+            <label><input type="radio" name="sexo-crianca" /> FEMININO</label>
+            <label><input type="radio" name="sexo-crianca" /> MASCULINO</label>
+          </div>
+        </div>
+        <div class="form-nav">
+          <button type="button" class="btn-outline prev-step">Voltar</button>
+          <button type="button" class="btn-primary next-step">Avançar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Painel: Endereço -->
+    <section class="form-step" id="panel-endereco" hidden>
+      <div class="panel-heading">📍 ENDEREÇO</div>
+      <form>
+        <div class="field-group">
+          <label for="cep">CEP*</label>
+          <input type="text" id="cep" required />
+        </div>
+        <div class="field-group">
+          <label for="rua">RUA*</label>
+          <input type="text" id="rua" required />
+        </div>
+        <div class="field-group">
+          <label for="bairro">BAIRRO*</label>
+          <input type="text" id="bairro" required />
+        </div>
+        <div class="field-group">
+          <label for="numero">NÚMERO*</label>
+          <input type="text" id="numero" required />
+        </div>
+        <div class="form-nav">
+          <button type="button" class="btn-outline prev-step">Voltar</button>
+          <button type="button" class="btn-primary next-step">Avançar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Painel: Seleção unidades -->
+    <section class="form-step" id="panel-unidades" hidden>
+      <div class="panel-heading">📖 SELEÇÃO UNIDADES</div>
+      <form>
+        <div class="field-group">
+          <label for="unidade1">1ª OPÇÃO DE CEI*</label>
+          <select id="unidade1">
+            <option>CEI Abelha Feliz</option>
+            <option>CEI Pônei Brilhante</option>
+            <option>CEI Arco-Íris Cintilante</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="unidade2">2ª OPÇÃO DE CEI</label>
+          <select id="unidade2">
+            <option>CEI Abelha Feliz</option>
+            <option>CEI Pônei Brilhante</option>
+            <option>CEI Arco-Íris Cintilante</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="turno">TURNO DESEJADO*</label>
+          <select id="turno">
+            <option>Matutino</option>
+            <option>Vespertino</option>
+            <option>Integral</option>
+          </select>
+        </div>
+        <div class="form-nav">
+          <button type="button" class="btn-outline prev-step">Voltar</button>
+          <button type="button" class="btn-primary next-step">Avançar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Painel: Pessoas na residência -->
+    <section class="form-step" id="panel-residencia" hidden>
+      <div class="panel-heading">👪 PESSOAS QUE MORAM NA MESMA RESIDÊNCIA</div>
+      <form>
+        <div class="field-group">
+          <label for="qtd-pessoas">QUANTAS PESSOAS MORAM NA RESIDÊNCIA?*</label>
+          <input type="text" id="qtd-pessoas" required />
+        </div>
+        <div class="field-group">
+          <label for="renda-familiar">RENDA FAMILIAR TOTAL*</label>
+          <input type="text" id="renda-familiar" required />
+        </div>
+        <div class="form-nav">
+          <button type="button" class="btn-outline prev-step">Voltar</button>
+          <button type="button" class="btn-primary next-step">Avançar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Painel: Situação financeira -->
+    <section class="form-step" id="panel-financeira" hidden>
+      <div class="panel-heading">💲 SITUAÇÃO FINANCEIRA</div>
+      <form>
+        <div class="field-group">
+          <label>A FAMÍLIA RECEBE ALGUM BENEFÍCIO SOCIAL?*</label>
+          <div class="checkbox-row">
+            <label><input type="radio" name="beneficio" /> SIM</label>
+            <label><input type="radio" name="beneficio" /> NÃO</label>
+          </div>
+        </div>
+        <div class="field-group">
+          <label for="qual-beneficio">QUAL BENEFÍCIO?</label>
+          <input type="text" id="qual-beneficio" />
+        </div>
+        <div class="form-nav">
+          <button type="button" class="btn-outline prev-step">Voltar</button>
+          <button type="button" class="btn-primary next-step">Avançar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Painel: Resumo / overview (imagem 4) -->
+    <section class="form-step" id="panel-resumo" hidden>
+      <div class="overview-list">
+        <div class="overview-item done" data-panel="responsavel">👤 DADOS PESSOAIS – RESPONSÁVEL</div>
+        <div class="overview-item done" data-panel="candidato">👤 DADOS PESSOAIS – CANDIDATO</div>
+        <div class="overview-item done" data-panel="endereco">📍 ENDEREÇO</div>
+        <div class="overview-item done" data-panel="unidades">📖 SELEÇÃO UNIDADES</div>
+        <div class="overview-item done" data-panel="residencia">👪+ PESSOAS QUE MORAM NA MESMA RESIDÊNCIA</div>
+        <div class="overview-item done" data-panel="financeira">💲 SITUAÇÃO FINANCEIRA</div>
+        <div class="overview-item" data-panel="resumo">☰ PAINEL DE INFORMAÇÕES FINAIS</div>
+      </div>
+      <div class="overview-cta">
+        <button type="button" class="btn-primary" id="finish-btn">Concluir processo e baixar protocolo</button>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
